@@ -1,0 +1,19 @@
+<GameStone>:
+    angle: 0
+    canvas.before:
+        PushMatrix
+        Rotate:
+            id: rotate
+            angle: root.angle
+            axis: 0, 0, 1
+            origin: root.center
+    canvas.after:
+        PopMatrix
+    
+<Table_of_Stones>:
+    canvas.before:
+        Color:
+            rgba:(0,0,0,.8)
+        Rectangle:
+            size: self.size
+            pos: self.pos
