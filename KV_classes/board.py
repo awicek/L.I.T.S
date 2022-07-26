@@ -1,13 +1,11 @@
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.widget import Widget
-
 from kivy.lang import Builder
 from kivy.config import Config
 Builder.load_file("KV_classes\\board.kv")
 Config.set('graphics', 'width', '630')
 Config.set('graphics', 'height', '700')
-
 from kivy.graphics import Color, Rectangle, Line
 
 from KVHRA.functions import create_board_file
@@ -139,5 +137,3 @@ if __name__ == "__main__":
         def build(self):
             return Board(basic_board)
     TestApp().run()
-
-

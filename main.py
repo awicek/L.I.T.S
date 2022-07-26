@@ -64,7 +64,7 @@ class MyGridLayout (GridLayout):
         super().__init__(**kwargs)
         self.widgets = list()
 
-# this saves settings to the file
+#saves settings to the file
 class MyScroll (ScrollView):
     def __init__(self,options,informations,**kwargs):
         super().__init__(**kwargs)
@@ -94,7 +94,6 @@ class MyScroll (ScrollView):
             self.current_selection = self.informations[num]
         else:
             self.current_selection = None
-
 # screen that loads game from json file
 class GameScreen (Screen):
     def create_game (self):
@@ -123,7 +122,6 @@ class GameScreen (Screen):
     def end_game(self):
         self.remove_widget(self.game)
         self.game = None
-
 # mainmenu screen
 class MainMenuScreen (Screen):
     ...
@@ -193,9 +191,6 @@ class SettingsScreen (Screen):
         with open ("KVHRA\\game_settings.json", "w") as f:
             json.dump(data, f, indent=4)
         
-
-        
-
 if __name__ == "__main__":
     class TestApp (App):
         def build(self):

@@ -103,6 +103,3 @@ def writeBoard(board, stone, color):
     for i in range(len(stone)):
         row, col = stone[i]
         board[row][col] = color
-
-
-

@@ -32,6 +32,7 @@ All other "stones":
         They can't touch the same colored stone.
 2) You can't create a square 2x2 fully covered by stones.
         That means if you have a situation like this: (B- represents blue colored "stone")
+        
         +---+---+---+
         | B |   | B |   
         +---+---+---+   
@@ -39,6 +40,7 @@ All other "stones":
         +---+---+---+
         |   |   |   |   
         +---+---+---+ 
+
         You CAN'T place red stone   #    like this:
                                     # # 
         +---+---+---+
@@ -48,9 +50,10 @@ All other "stones":
         +---+---+---+
         |   |   |   |   
         +---+---+---+
+
         Because you created a square 2x2 fully covered by stones:
 
-        For example, you CAN place it in any of these ways.
+        For example, you CAN place it in any of these ways:
         +---+---+---+   +---+---+---+  +---+---+---+  +---+---+---+  +---+---+---+ 
         | B |   | B |   | B |   | B |  | B |   | B |  | B |   | B |  | B |   | B |
         +---+---+---+   +---+---+---+  +---+---+---+  +---+---+---+  +---+---+---+

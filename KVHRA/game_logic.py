@@ -1,6 +1,5 @@
 from PLAYERS.my_player import Player
 
-
 def writeBoard(board, stone, color):
     for i in range(len(stone)):
         row, col = stone[i]
@@ -118,22 +117,18 @@ class Game:
         added = list()
         for i,j in pos:
             x,y = i+xx,yy+j
-            # kontrola jesti se pole vejde, případne vepsání 9
             if self.board[x][y] > 0:
                 self.delete(added)
                 return False
             else:
                 self.board[x][y] = 9
                 added.append([x,y])
-
-            # kontrola jesti se neporuší pravidlo o čtevrcích
             if self.control_rect(x,y):
                 self.delete(added)
                 return False
 
             if first:
                 control = True
-            # kontrola jestli se neporuší pravidlo barev
             else:
                 c2 = self.control_color(color,x,y)
                 if c2 == 0:

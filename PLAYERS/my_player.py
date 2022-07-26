@@ -716,5 +716,4 @@ class Player():
         for x,y in move.coords:
             final_coords.append([x+move.x,y+move.y])
         return [move.stone_id, final_coords]
-#-------------------------------------------------
     
