@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.properties import NumericProperty
 
 from kivy.lang import Builder
-Builder.load_file("KV_classes\\relative_layout.kv")
+Builder.load_file("KV_classes/relative_layout.kv")
 from kivy.config import Config
 Config.set('graphics', 'width', '630')
 Config.set('graphics', 'height', '700')
@@ -11,9 +11,9 @@ from kivy.clock import Clock
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
 
-from KVHRA.functions import create_random_board, stones, colors, stones_for_players
+from GAME.functions import create_random_board, stones, colors, stones_for_players
 from KV_classes.game_widget import GameWidget
-from KVHRA.game_logic import Game
+from GAME.game_logic import Game
 
 
 #Arguments

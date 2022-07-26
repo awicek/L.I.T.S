@@ -3,14 +3,14 @@ from kivy.config import Config
 Config.set('graphics', 'width', '630')
 Config.set('graphics', 'height', '700')
 from kivy.lang import Builder
-Builder.load_file("KV_classes\\table_of_stones.kv")
+Builder.load_file("KV_classes/table_of_stones.kv")
 
 from kivy.uix.widget import Widget
 from kivy.uix.floatlayout import FloatLayout
 from kivy.graphics import Color, Rectangle, Rotate
 from kivy.graphics.context_instructions import PopMatrix, PushMatrix
 
-from KVHRA.functions import Stone, read_stones, colors
+from GAME.functions import Stone, read_stones, colors
 
 #   on_touch_down - rewrite
 # Arguments:

@@ -6,7 +6,7 @@ from kivy.lang.builder import Instruction
 Config.set('graphics', 'width', '700')
 Config.set('graphics', 'height', '700')
 from kivy.lang import Builder
-Builder.load_file("KV_classes\\game_widget.kv")
+Builder.load_file("KV_classes/game_widget.kv")
 
 from kivy.uix.floatlayout import FloatLayout
 from kivy.graphics import Color, Rectangle
@@ -15,7 +15,7 @@ from kivy.uix.label import Label
 
 from KV_classes.board import Board
 from KV_classes.table_of_stones import Table_of_Stones
-from KVHRA.functions import create_random_board, stones, colors
+from GAME.functions import create_random_board, stones, colors
 import time
 
 #Argumetns: 

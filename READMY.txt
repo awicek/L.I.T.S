@@ -6,8 +6,15 @@ But I also want to play against my bot so I created this to be able to
 beat my creation. (Usually, I lose against my bot.)
 
 It's my first more complex project.
-It's written using KIWI library and a few basic ones more.
+It's build using KIVY module.
 It's not a great example of well-written code.  I'm impressed that it works :-D.
+
+HOW TO RUN A GAME 
+1) Make sure you have installed kivy (version 1.10.1 works). 
+    Linux  "sudo apt-get install python3-kivy"
+    Windows: https://kivy.org/doc/stable/gettingstarted/installation.html#install-pip
+2) Run main.py .
+    "python3 main.py"
 
 LITS RULES:
 It's a game for two players, one has X and another one O charakter.

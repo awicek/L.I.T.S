@@ -3,12 +3,12 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.widget import Widget
 from kivy.lang import Builder
 from kivy.config import Config
-Builder.load_file("KV_classes\\board.kv")
+Builder.load_file("KV_classes/board.kv")
 Config.set('graphics', 'width', '630')
 Config.set('graphics', 'height', '700')
 from kivy.graphics import Color, Rectangle, Line
 
-from KVHRA.functions import create_board_file
+from GAME.functions import create_board_file
 
 # widget thats represent each box in board (it has to be widget becoase canvas Rectangle dos not have opacity)
 class BoardBox (Widget):

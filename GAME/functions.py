@@ -231,5 +231,5 @@ def create_random_stones (amount = -1):
     return game_stones, stones_for_players
 
 colors = {"1":(1,0,0,.8), "2": (.4,.7,.3,.8), "3":(0,0,1,.8), "4": (0,1,1,.8)}
-stones = read_stones("KVHRA\\_stones.txt")
-stones_for_players = s_f_p("KVHRA\\_stones.txt")
+stones = read_stones("GAME/_stones.txt")
+stones_for_players = s_f_p("GAME/_stones.txt")

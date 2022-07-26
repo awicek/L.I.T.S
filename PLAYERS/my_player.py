@@ -1,4 +1,4 @@
-import KVHRA.base as base
+import GAME.base as base
 import copy
 from collections import defaultdict
 from PLAYERS.player_data import rotations_names, all_rotations, connections, forbiden_coords, safe_dict

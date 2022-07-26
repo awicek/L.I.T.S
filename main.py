@@ -1,6 +1,7 @@
 from kivy.app import App 
 from kivy.config import Config
 
+
 Config.set('graphics', 'width', '700')
 Config.set('graphics', 'height', '700')
 from kivy.lang import Builder
@@ -15,7 +16,7 @@ from functools import partial
 import json
 
 from kivy.uix.screenmanager import ScreenManager, Screen
-from KVHRA.functions import create_random_stones, stones, colors,  stones_for_players, create_random_board
+from GAME.functions import create_random_stones, stones, colors,  stones_for_players, create_random_board
 from KV_classes.relative_layout import GameWin
 
 from kivy.clock import Clock
@@ -97,7 +98,7 @@ class MyScroll (ScrollView):
 # screen that loads game from json file
 class GameScreen (Screen):
     def create_game (self):
-        with open ("KVHRA\\game_settings.json", "r") as f:
+        with open ("GAME/game_settings.json", "r") as f:
             data = json.load(f)
         p1 = data["player1"]
         p2 = data["player2"]
@@ -181,14 +182,14 @@ class SettingsScreen (Screen):
         # file == 1, random ==0
         sourse = self.sourse.current_selection
         data_list = ["player1", "player2", "board_size", "stones", "sourse"]
-        with open ("KVHRA\\game_settings.json", "r") as f:
+        with open ("GAME/game_settings.json", "r") as f:
             data = json.load(f)
         
         for i,j in enumerate([p1,p2,board_size,stones,sourse]):
             if j != None:
                 data[data_list[i]] = j
 
-        with open ("KVHRA\\game_settings.json", "w") as f:
+        with open ("GAME/game_settings.json", "w") as f:
             json.dump(data, f, indent=4)
         
 if __name__ == "__main__":
