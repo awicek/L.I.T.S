@@ -1,3 +1,4 @@
+# Used for generate PLAYERS.player_data
 import copy
 
 def save_half_safe2 (self,xx,yy, control = False):
