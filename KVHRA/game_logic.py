@@ -1,4 +1,4 @@
-from PLAYERS.killermode import Player
+from PLAYERS.my_player import Player
 
 
 def writeBoard(board, stone, color):

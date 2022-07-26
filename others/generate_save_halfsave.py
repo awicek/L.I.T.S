@@ -1,5 +1,4 @@
 import copy
-from typing import Match 
 
 def save_half_safe2 (self,xx,yy, control = False):
        field = list()
@@ -24,7 +23,6 @@ def generate9 (current):
     else:
         for i in [0,1,2]:
             generate9(current + [i])
-
 
 def generate4 (current):
     global possible
@@ -240,12 +238,9 @@ def rate9 (field):
                 return 2
     return 0
 
-import time
-t1 = time.time()
 generate4([])
 generate6([])
 generate9([])
-
 
 resulting_dict = dict()
 
@@ -265,8 +260,6 @@ for i in possible:
             s += str(j)
         resulting_dict[s] = rate9(i)
 
-
 print(resulting_dict)
-t2 = time.time()
 
 

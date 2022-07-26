@@ -1,0 +1,60 @@
+This is my first python project. It's GUI for my semestral project,
+where all students make their "players" bots for game LITS and then play
+against each other in the tournament. 
+
+But I also want to play against my bot so I created this to be able to
+beat my creation. (Usually, I lose against my bot.)
+
+It's my first more complex project.
+It's written using KIWI library and a few basic ones more.
+It's not a great example of well-written code.  I'm impressed that it works :-D.
+
+LITS RULES:
+It's a game for two players, one has X and another one O charakter.
+Your goal is to place "stones" on the bord and block opponents' characters.
+When no stones are left or any stone can't be placed game ends.
+Whoever has most characters not covered by "stone" wins.
+
+Stones are in these shapes: 
+    # # #    # # # #   # # #   # #   #   #   # # #   # #     # # #     # 
+      #                    #     #   # # #     #       #             # # #
+      #                                                # #             #
+And three colors:
+    red, green, blue
+And you can rotate them. (In-game click on "stone" and it will rotate 90* anticlockwise)
+
+How to place a "stone":
+
+A player who starts can choose any stone and place it anywhere.
+All other "stones":
+1) Has to touch differently colored stones. 
+        They can't be placed somewhere, where they don't touch another "stone".
+        They can't touch the same colored stone.
+2) You can't create a square 2x2 fully covered by stones.
+        That means if you have a situation like this: (B- represents blue colored "stone")
+        +---+---+---+
+        | B |   | B |   
+        +---+---+---+   
+        |   |   |   |    
+        +---+---+---+
+        |   |   |   |   
+        +---+---+---+ 
+        You CAN'T place red stone   #    like this:
+                                    # # 
+        +---+---+---+
+        | B | R | B |   
+        +---+---+---+   
+        |   | R | R |    
+        +---+---+---+
+        |   |   |   |   
+        +---+---+---+
+        Because you created a square 2x2 fully covered by stones:
+
+        For example, you CAN place it in any of these ways.
+        +---+---+---+   +---+---+---+  +---+---+---+  +---+---+---+  +---+---+---+ 
+        | B |   | B |   | B |   | B |  | B |   | B |  | B |   | B |  | B |   | B |
+        +---+---+---+   +---+---+---+  +---+---+---+  +---+---+---+  +---+---+---+
+        |   | R |   |   |   | R | R |  | R | R |   |  |   | R |   |  | R |   |   |
+        +---+---+---+   +---+---+---+  +---+---+---+  +---+---+---+  +---+---+---+
+        |   | R | R |   |   | R |   |  |   | R |   |  | R | R |   |  | R | R |   |
+        +---+---+---+   +---+---+---+  +---+---+---+  +---+---+---+  +---+---+---+

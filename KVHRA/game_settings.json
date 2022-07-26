@@ -1,9 +1,9 @@
 {
     "player1": 1,
-    "player2": 1,
+    "player2": 0,
     "bord_size": -1,
-    "stones": 10,
+    "stones": -1,
     "sourse": -1,
     "cometn": "player:(0==PC, 1==clovicekek), board_size,marks,stones:(-1 == random), sourse:(1 == file, -1 == random)",
-    "board_size": 10
+    "board_size": -1
 }

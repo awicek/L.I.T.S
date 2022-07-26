@@ -14,13 +14,46 @@ from kivy.uix.gridlayout import GridLayout
 from functools import partial
 import json
 
-
 from kivy.uix.screenmanager import ScreenManager, Screen
 from KVHRA.functions import create_random_stones, stones, colors,  stones_for_players, create_random_board
 from KV_classes.relative_layout import GameWin
 
 from kivy.clock import Clock
 
+# Main App
+class MainWindow (ScreenManager):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+    
+        self.ids.mainmenu.ids.settings_b.on_release = self.to_settings
+        self.ids.settings.ids.mainmenu_b.on_release = self.to_main_menu_l   
+        self.ids.mainmenu.ids.game_b.on_release = self.to_game
+
+        def end_game_check (dt):
+            if self.current == "Game":
+                if self.ids.game.game.end == True:
+                    self.ids.game.end_game()
+                    self.to_main_menu_r()
+
+        Clock.schedule_interval(end_game_check,.5)
+
+    def to_settings (self):
+        self.transition.direction = 'right'
+        self.current = "Settings"
+    
+    def to_main_menu_r (self):
+        self.transition.direction = 'right'
+        self.current = "MainMenu"
+    
+    def to_main_menu_l (self):
+        self.transition.direction = 'left'
+        self.current = "MainMenu"
+        self.ids.settings.safe_settings()
+    
+    def to_game (self):
+        self.transition.direction = 'left'
+        self.ids.game.create_game()
+        self.current = "Game"
 
 class MyLabel (Label):
     def on_size(self,*args):
@@ -90,6 +123,7 @@ class GameScreen (Screen):
     def end_game(self):
         self.remove_widget(self.game)
         self.game = None
+
 # mainmenu screen
 class MainMenuScreen (Screen):
     ...
@@ -159,40 +193,7 @@ class SettingsScreen (Screen):
         with open ("KVHRA\\game_settings.json", "w") as f:
             json.dump(data, f, indent=4)
         
-# Main App
-class MainWindow (ScreenManager):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-    
-        self.ids.mainmenu.ids.settings_b.on_release = self.to_settings
-        self.ids.settings.ids.mainmenu_b.on_release = self.to_main_menu_l   
-        self.ids.mainmenu.ids.game_b.on_release = self.to_game
 
-        def end_game_check (dt):
-            if self.current == "Game":
-                if self.ids.game.game.end == True:
-                    self.ids.game.end_game()
-                    self.to_main_menu_r()
-
-        Clock.schedule_interval(end_game_check,.5)
-
-    def to_settings (self):
-        self.transition.direction = 'right'
-        self.current = "Settings"
-    
-    def to_main_menu_r (self):
-        self.transition.direction = 'right'
-        self.current = "MainMenu"
-    
-    def to_main_menu_l (self):
-        self.transition.direction = 'left'
-        self.current = "MainMenu"
-        self.ids.settings.safe_settings()
-    
-    def to_game (self):
-        self.transition.direction = 'left'
-        self.ids.game.create_game()
-        self.current = "Game"
         
 
 if __name__ == "__main__":
@@ -200,8 +201,3 @@ if __name__ == "__main__":
         def build(self):
             return MainWindow()
     TestApp().run()
-
-
- 
-
-    

@@ -8,6 +8,7 @@
     SettingsScreen:
         id: settings
         name: "Settings"
+
 <MainMenuScreen>:
     Label: 
         text: "L.I.T.Z"
@@ -24,6 +25,7 @@
         text: "SETTINGS"
         size_hint: (.8,.2)
         pos_hint: {"center_x":.5, "center_y": .3}
+
 <SettingsScreen>:
     Label:
         text: "P1: "
@@ -35,32 +37,30 @@
         font_size: 50
         size_hint: (.1,.1)
         pos_hint: {"center_x":.55, "center_y":.85}
-
     MyLabel:
         text: "BOARD"
         font_size: 40
         size_hint: (1,.2)
-        pos_hint: {"center_x":0.5, "center_y":.8}
+        pos_hint: {"center_x":0.6, "center_y":.8}
     MyLabel: 
         text: "Size:"
         halign: "left"
         valign: "middle"
         font_size: 30
-        pos_hint: {"x":0, "center_y":.6}
-        size_hint: (.2,.2)
-
+        size_hint: (.3,.2)
+        pos_hint: {"center_x":.18, "center_y":.6}
     MyLabel:
         text: "STONES"
         font_size: 40
-        size_hint: (.3,.2)
-        pos_hint: {"x":0, "center_y":.5}
+        size_hint: (1,.2)
+        pos_hint: {"center_x":0.6, "center_y":.5}
     MyLabel: 
         text: "Amount:"
         halign: "left"
         valign: "middle"
         font_size: 30
         size_hint: (.3,.2)
-        pos_hint: {"center_x":.15, "center_y":.3}
+        pos_hint: {"center_x":.18, "center_y":.3}
     MyLabel: 
         text: "Sourse:"
         halign: "left"
@@ -68,16 +68,17 @@
         font_size: 30
         size_hint: (.3,.2)
         pos_hint: {"x":.5, "center_y":.3}
-
     Button:
         id: mainmenu_b
         text: "SAVE"
         font_size: 40
         size_hint: (.2,.1)
         pos_hint: {"center_x":.75, "center_y": .1}
+
 <MyScroll>:
     do_scroll_y: True
     bar_width: 0
+
 <MyGridLayout>:
     size_hint: 1, None
     height: self.minimum_height	
